@@ -57,3 +57,6 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.dynamic_sensor_hal
+
+# Custom flags system.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/custom_system.prop
