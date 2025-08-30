@@ -69,9 +69,13 @@ BYPASS_CHARGE_SUPPORTED := true
 # GMS
 WITH_GMS := true
 
-# Mist OS Flags
-MIST_BUILD_TYPE := OFFICIAL
-MISTOS_MAINTAINER := GamerBoy1234294
+# RisingOS Revived Flags
+#WITH_PIXEL_OVERLAYS := true
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+RISING_MAINTAINER := GamerBoy1234294
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingChipset="Google Tensor G4" \
+    RisingMaintainer="GamerBoy1234294"
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2424
