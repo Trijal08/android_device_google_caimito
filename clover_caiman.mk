@@ -6,7 +6,7 @@
 
 # Inherit some common stuff
 TARGET_DISABLE_EPPE := true
-ROM_VENDOR := lineage
+ROM_VENDOR := clover
 ifdef ROM_VENDOR
 $(call inherit-product, vendor/$(ROM_VENDOR)/config/common_full_phone.mk)
 else
@@ -68,10 +68,6 @@ BYPASS_CHARGE_SUPPORTED := true
 
 # GMS
 WITH_GMS := true
-
-# Mist OS Flags
-MIST_BUILD_TYPE := OFFICIAL
-MISTOS_MAINTAINER := GamerBoy1234294
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2856

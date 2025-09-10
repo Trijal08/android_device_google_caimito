@@ -6,7 +6,7 @@
 
 # Inherit some common stuff
 TARGET_DISABLE_EPPE := true
-ROM_VENDOR := lineage
+ROM_VENDOR := clover
 ifdef ROM_VENDOR
 $(call inherit-product, vendor/$(ROM_VENDOR)/config/common_full_phone.mk)
 else
@@ -14,16 +14,16 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 endif
 
 # Inherit device configuration
-DEVICE_CODENAME := komodo
+DEVICE_CODENAME := tokay
 DEVICE_PATH := device/google/caimito
-VENDOR_PATH := vendor/google/komodo
+VENDOR_PATH := vendor/google/tokay
 $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
 $(call inherit-product, device/google/zumapro/lineage_common.mk)
 $(call inherit-product, $(DEVICE_PATH)/$(DEVICE_CODENAME)/device-lineage.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := google
-PRODUCT_MODEL := Pixel 9 Pro XL
+PRODUCT_MODEL := Pixel 9
 ifdef ROM_VENDOR
 PRODUCT_NAME := $(ROM_VENDOR)_$(DEVICE_CODENAME)
 else
@@ -69,18 +69,14 @@ BYPASS_CHARGE_SUPPORTED := true
 # GMS
 WITH_GMS := true
 
-# Mist OS Flags
-MIST_BUILD_TYPE := OFFICIAL
-MISTOS_MAINTAINER := GamerBoy1234294
-
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2992
-TARGET_SCREEN_WIDTH := 1344
-TARGET_BOOT_ANIMATION_RES := 1344
+TARGET_SCREEN_HEIGHT := 2424
+TARGET_SCREEN_WIDTH := 1080
+TARGET_BOOT_ANIMATION_RES := 1080
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="komodo-user 16 BP3A.251005.004.B1 14042072 release-keys" \
-    BuildFingerprint=google/komodo/komodo:16/BP3A.251005.004.B1/14042072:user/release-keys \
+    BuildDesc="tokay-user 16 BP3A.251005.004.B1 14042072 release-keys" \
+    BuildFingerprint=google/tokay/tokay:16/BP3A.251005.004.B1/14042072:user/release-keys \
     DeviceProduct=$(DEVICE_CODENAME)
 
 $(call inherit-product, $(VENDOR_PATH)/$(DEVICE_CODENAME)-vendor.mk)
