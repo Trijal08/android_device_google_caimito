@@ -5,7 +5,7 @@
 #
 
 # Inherit some common stuff
-ROM_VENDOR := lineage
+ROM_VENDOR := matrixx
 ifdef ROM_VENDOR
 $(call inherit-product, vendor/$(ROM_VENDOR)/config/common_full_phone.mk)
 else
@@ -27,10 +27,59 @@ else
 PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
 endif
 
+# UDFPS support
+TARGET_HAS_UDFPS := true
+EXTRA_UDFPS_ANIMATIONS := true
+
+# Blur
+TARGET_ENABLE_BLUR := true
+
+# Lawnchair (Pixel Launcher by default)
+TARGET_INCLUDE_PIXEL_LAUNCHER := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+
+# Exclude Aperture camera app
+PRODUCT_NO_CAMERA := true
+
+# Custom package installer
+TARGET_USE_CUSTOM_PACKAGE_INSTALLER := true
+
+# Live wallpapers
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+
+# Quick tap
+TARGET_SUPPORTS_QUICK_TAP  := true
+
+# Now Playing
+TARGET_SUPPORTS_NOW_PLAYING := true
+
+# Clear Calling
+TARGET_SUPPORTS_CLEAR_CALLING := true
+
+# Call Recording Support
+TARGET_SUPPORTS_CALL_RECORDING := true
+
+# Bypass charging
+BYPASS_CHARGE_SUPPORTED := true
+
+# Matrixx OS Flags
+MATRIXX_BUILD_TYPE := OFFICIAL
+MATRIXX_MAINTAINER := GamerBoy1234294
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_CUSTOM_UDFPS := true
+WITH_GMS := true
+WITH_GMS_COMMS_SUITE := true
+WITH_GMS_AICORE := true
+TARGET_INCLUDE_PIXEL_LAUNCHER := true
+WITH_BCR := true
+TARGET_OPTIMIZED_DEXOPT := true
+HBM_SUPPORTED := true
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2992
 TARGET_SCREEN_WIDTH := 1344
-TARGET_BOOT_ANIMATION_RES := 1344
+TARGET_PIXEL_BOOT_ANIMATION_RES := 1440
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="komodo-user 16 BP4A.260205.002 14624737 release-keys" \
